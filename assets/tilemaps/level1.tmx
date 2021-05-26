@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.5" tiledversion="1.5.0" orientation="orthogonal" renderorder="right-down" width="42" height="7" tilewidth="64" tileheight="64" infinite="0" nextlayerid="10" nextobjectid="66">
+ <editorsettings>
+  <export target="level1.json" format="json"/>
+ </editorsettings>
+ <tileset firstgid="1" name="kenney_simple_platformer" tilewidth="64" tileheight="64" tilecount="98" columns="14">
+  <image source="../tilesets/platformPack_tilesheet.png" width="896" height="448"/>
+ </tileset>
+ <layer id="6" name="Platforms" width="42" height="7">
+  <data encoding="csv">
+60,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,60,
+60,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,60,
+60,0,0,0,0,0,0,0,0,0,0,60,60,60,0,0,0,0,0,0,0,0,33,0,0,0,0,33,33,0,0,0,0,0,0,0,0,0,0,0,0,60,
+60,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,60,
+60,0,0,0,0,60,60,60,0,0,0,0,0,0,0,0,60,60,60,0,0,0,0,0,0,0,0,0,0,0,0,0,0,61,61,61,0,0,0,0,0,60,
+60,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,60,
+4,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,1,1,4
+</data>
+ </layer>
+ <objectgroup id="8" name="Stars">
+  <object id="52" gid="51" x="322" y="254" width="64" height="64"/>
+  <object id="53" gid="51" x="446" y="254" width="64" height="64"/>
+  <object id="54" gid="51" x="382" y="256" width="64" height="64"/>
+  <object id="55" gid="51" x="1404" y="126" width="64" height="64"/>
+  <object id="56" gid="51" x="1404" y="386" width="64" height="64"/>
+  <object id="57" gid="51" x="1730" y="384" width="64" height="64"/>
+  <object id="58" gid="51" x="1796" y="388" width="64" height="64"/>
+  <object id="59" gid="51" x="1760" y="122" width="64" height="64"/>
+  <object id="60" gid="51" x="2178" y="250" width="64" height="64"/>
+  <object id="61" gid="51" x="1090" y="248" width="64" height="64"/>
+  <object id="62" gid="51" x="700" y="128" width="64" height="64"/>
+  <object id="63" gid="51" x="834" y="126" width="64" height="64"/>
+ </objectgroup>
+ <objectgroup id="9" name="Door">
+  <object id="64" gid="76" x="2560" y="384" width="64" height="64"/>
+ </objectgroup>
+ <objectgroup id="3" name="Spikes">
+  <object id="3" gid="71" x="896" y="448" width="64" height="64"/>
+  <object id="5" gid="71" x="448" y="448" width="64" height="64"/>
+  <object id="6" gid="71" x="512" y="448" width="64" height="64"/>
+  <object id="7" gid="71" x="576" y="448" width="64" height="64"/>
+  <object id="8" gid="71" x="640" y="448" width="64" height="64"/>
+  <object id="9" gid="71" x="704" y="448" width="64" height="64"/>
+  <object id="10" gid="71" x="768" y="448" width="64" height="64"/>
+  <object id="11" gid="71" x="832" y="448" width="64" height="64"/>
+  <object id="12" gid="71" x="1024" y="448" width="64" height="64"/>
+  <object id="13" gid="71" x="1088" y="448" width="64" height="64"/>
+  <object id="14" gid="71" x="1152" y="448" width="64" height="64"/>
+  <object id="15" gid="71" x="1216" y="448" width="64" height="64"/>
+  <object id="20" gid="71" x="1280" y="448" width="64" height="64"/>
+  <object id="21" gid="71" x="960" y="448" width="64" height="64"/>
+  <object id="23" gid="71" x="192" y="448" width="64" height="64"/>
+  <object id="24" gid="71" x="256" y="448" width="64" height="64"/>
+  <object id="25" gid="71" x="320" y="448" width="64" height="64"/>
+  <object id="26" gid="71" x="384" y="448" width="64" height="64"/>
+  <object id="32" gid="71" x="1920" y="448" width="64" height="64"/>
+  <object id="33" gid="71" x="1984" y="448" width="64" height="64"/>
+  <object id="34" gid="71" x="2048" y="448" width="64" height="64"/>
+  <object id="35" gid="71" x="2112" y="448" width="64" height="64"/>
+  <object id="36" gid="71" x="2176" y="448" width="64" height="64"/>
+  <object id="37" gid="71" x="2240" y="448" width="64" height="64"/>
+  <object id="39" gid="71" x="2432" y="448" width="64" height="64"/>
+  <object id="40" gid="71" x="2368" y="448" width="64" height="64"/>
+  <object id="41" gid="71" x="2304" y="448" width="64" height="64"/>
+  <object id="42" gid="71" x="1536" y="448" width="64" height="64"/>
+  <object id="43" gid="71" x="1600" y="448" width="64" height="64"/>
+ </objectgroup>
+</map>
