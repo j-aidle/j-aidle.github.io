@@ -574,7 +574,7 @@ var scene5 = new Phaser.Class({
   },
   create: function() {
     const backgroundImg = this.add.image(0, 0, 'gameover').setOrigin(0, 0);
-    backgroundImg.setScale(1, 0.75);
+    backgroundImg.setScale(1, 1);
     this.add.text(300, 450, 'Puntuació:'+score, { fontSize: '32px',fill: '#0f0' });
     const inici = this.add.text(300, 550, 'Anar a inici', { fontSize: '32px',fill: '#0f0' });
     inici.setInteractive();
