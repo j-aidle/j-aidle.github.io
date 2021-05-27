@@ -233,6 +233,8 @@ var scene2 = new Phaser.Class({
       this.player.setFlipX(true);
     }
     if (currentHealth <0){
+      this.scene.stop('scene2');
+      music.stop();
       score = 0;
       this.scene.start('scene1');
     }
@@ -243,6 +245,7 @@ var scene2 = new Phaser.Class({
     currentHealth -=1;
     //lifeText = null;
     //lifeText = this.add.text(300,100,"vida:"+currentHealth, { fill: '#000000' });
+    this.cameras.main.shake(500, 0.01);
     lifeText.setText('Vida: ' + currentHealth);
     lifeText.fixedToCamera = true;
     // Set velocity back to 0
@@ -475,6 +478,8 @@ var scene3 = new Phaser.Class({
       this.player.setFlipX(true);
     }
     if (currentHealth <0){
+      this.scene.stop('scene3');
+      music.stop();
       score = 0;
       this.scene.start('scene1');
     }
@@ -483,6 +488,7 @@ var scene3 = new Phaser.Class({
 
   playerHit: function(player, spike) {
     currentHealth -=1;
+    this.cameras.main.shake(500, 0.01);
     //lifeText = null;
     //lifeText = this.add.text(300,100,"vida:"+currentHealth, { fill: '#000000' });
     lifeText.setText('Vida: ' + currentHealth);
@@ -516,7 +522,7 @@ var scene3 = new Phaser.Class({
 
   goToEnd: function(player, meta)
   {
-    this.scene.stop('scene2');
+    this.scene.stop('scene3');
     music.stop();  
     //this.scene.remove('scene3');
     meta.disableBody( true, true) ;
@@ -533,12 +539,12 @@ var scene4 = new Phaser.Class({
   init: function() {},
 
   preload: function() {
-    //this.load.image('arcade', 'assets/images/arcade.png');
+    this.load.image('arcade', 'assets/images/gameover.png');
     this.load.audio('sc', ['assets/audio/sc.mp3', 'assets/audio/sc.ogg']);
   },
   create: function() {
-    //const backgroundImg = this.add.image(0, 0, 'arcade').setOrigin(0, 0);
-    //backgroundImg.setScale(2, 1.2);
+    const backgroundImg = this.add.image(0, 0, 'arcade').setOrigin(0, 0);
+    backgroundImg.setScale(2, 1.2);
     this.add.text(300, 450, 'Puntuació:'+score, { fontSize: '32px',fill: '#0f0' });
     const inici = this.add.text(300, 550, 'Anar a inici', { fontSize: '32px',fill: '#0f0' });
     inici.setInteractive();
