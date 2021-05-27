@@ -65,7 +65,7 @@ var scene2 = new Phaser.Class({
     this.load.image('portal', 'assets/images/portal.png');
 
     this.load.audio('sc2', ['assets/audio/sc2.mp3', 'assets/audio/sc2.ogg']);
-    this.load.audio('dead', 'assets/audio/dead.mp3');
+    this.load.audio('dead', ['assets/audio/dead.mp3', 'assets/audio/dead.ogg']);
   },
 
   create: function() {
@@ -492,6 +492,9 @@ var scene3 = new Phaser.Class({
 
   playerHit: function(player, spike) {
     currentHealth -=1;
+    music.stop();
+    music2 = this.sound.add('dead');
+    music2.play();
     this.cameras.main.shake(500, 0.01);
     //lifeText = null;
     //lifeText = this.add.text(300,100,"vida:"+currentHealth, { fill: '#000000' });
@@ -514,6 +517,7 @@ var scene3 = new Phaser.Class({
     //  ease: 'Linear',
     //  repeat: 5,
     //});
+    music.play();
   },
 
   collectStar: function(player, star)
