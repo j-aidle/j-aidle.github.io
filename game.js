@@ -235,8 +235,8 @@ var scene2 = new Phaser.Class({
     if (currentHealth <0){
       this.scene.stop('scene2');
       music.stop();
-      score = 0;
-      this.scene.start('scene1');
+      //score = 0;
+      this.scene.start('scene5');
     }
 
   },
@@ -480,8 +480,8 @@ var scene3 = new Phaser.Class({
     if (currentHealth <0){
       this.scene.stop('scene3');
       music.stop();
-      score = 0;
-      this.scene.start('scene1');
+      //score = 0;
+      this.scene.start('scene5');
     }
 
   },
@@ -539,12 +539,42 @@ var scene4 = new Phaser.Class({
   init: function() {},
 
   preload: function() {
-    this.load.image('arcade', 'assets/images/gameover.png');
+    this.load.image('arcade', 'assets/images/arcade.png');
     this.load.audio('sc', ['assets/audio/sc.mp3', 'assets/audio/sc.ogg']);
   },
   create: function() {
     const backgroundImg = this.add.image(0, 0, 'arcade').setOrigin(0, 0);
     backgroundImg.setScale(2, 1.2);
+    this.add.text(300, 450, 'Puntuació:'+score, { fontSize: '32px',fill: '#0f0' });
+    const inici = this.add.text(300, 550, 'Anar a inici', { fontSize: '32px',fill: '#0f0' });
+    inici.setInteractive();
+    music = this.sound.add('sc');
+
+    music.play();
+
+    this.input.once('pointerdown', function () {
+          this.scene.start('scene1');
+          music.stop();
+        }, this);
+
+  }
+});
+
+var scene5 = new Phaser.Class({
+
+  Extends: Phaser.Scene,
+  initialize: function() {
+        Phaser.Scene.call(this, { "key": "scene5" });
+  },
+  init: function() {},
+
+  preload: function() {
+    this.load.image('gameover', 'assets/images/gameover.png');
+    this.load.audio('sc', ['assets/audio/sc.mp3', 'assets/audio/sc.ogg']);
+  },
+  create: function() {
+    const backgroundImg = this.add.image(0, 0, 'gameover').setOrigin(0, 0);
+    backgroundImg.setScale(1, 0.75);
     this.add.text(300, 450, 'Puntuació:'+score, { fontSize: '32px',fill: '#0f0' });
     const inici = this.add.text(300, 550, 'Anar a inici', { fontSize: '32px',fill: '#0f0' });
     inici.setInteractive();
@@ -569,7 +599,7 @@ const config = {
     mode: Phaser.Scale.RESIZE,
     autoCenter: Phaser.Scale.CENTER_BOTH
   },
-  scene: [scene1,scene2,scene3,scene4],
+  scene: [scene1,scene2,scene3,scene4,scene5],
   physics: {
     default: 'arcade',
     arcade: {
