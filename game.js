@@ -4,6 +4,7 @@ var lifeText = "";
 var scoreText;
 var score=0;
 var music;
+var music2;
 
 var scene1 = new Phaser.Class({
 
@@ -64,6 +65,7 @@ var scene2 = new Phaser.Class({
     this.load.image('portal', 'assets/images/portal.png');
 
     this.load.audio('sc2', ['assets/audio/sc2.mp3', 'assets/audio/sc2.ogg']);
+    this.load.audio('dead', 'assets/audio/dead.mp3');
   },
 
   create: function() {
@@ -87,7 +89,6 @@ var scene2 = new Phaser.Class({
     platforms.setCollisionByExclusion(-1, true);
 
     music = this.sound.add('sc2');
-
     music.play();
 
     // Add the player to the game world
@@ -233,8 +234,8 @@ var scene2 = new Phaser.Class({
       this.player.setFlipX(true);
     }
     if (currentHealth <0){
-      this.scene.stop('scene2');
       music.stop();
+      this.scene.stop('scene2');
       //score = 0;
       this.scene.start('scene5');
     }
@@ -243,6 +244,9 @@ var scene2 = new Phaser.Class({
 
   playerHit: function(player, spike) {
     currentHealth -=1;
+    music.stop();
+    music2 = this.sound.add('dead');
+    music2.play();
     //lifeText = null;
     //lifeText = this.add.text(300,100,"vida:"+currentHealth, { fill: '#000000' });
     this.cameras.main.shake(500, 0.01);
@@ -265,11 +269,11 @@ var scene2 = new Phaser.Class({
     //  ease: 'Linear',
     //  repeat: 5,
     //});
+    music.play();
   },
 
   collectStar: function(player, star)
   {
-
       score += 10;
       scoreText.setText('Score: ' + score);
       star.destroy();
